@@ -17,7 +17,7 @@ public class Boisson {
 	 */
 	public Boisson(String nom){
 		this.nom = nom;
-		this.alcoolise = new Boolean(false);
+		this.alcoolise = false;
 	}
 	
 	/**
@@ -27,7 +27,7 @@ public class Boisson {
 	public Boisson(String nom, Float degre){
 		this.nom = nom;
 		this.degre = degre;
-		this.alcoolise = new Boolean(true);
+		this.alcoolise = true;
 	}
 	
 	/* (non-Javadoc)

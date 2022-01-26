@@ -31,8 +31,8 @@ public class Pub {
 
 		Boisson coca = new Boisson("Coca");
 		Boisson eau = new Boisson("Eau");
-		Boisson sky = new Boisson("Whisky", new Float(40));
-		Boisson bierre = new Boisson("Bierre", new Float(8));
+		Boisson sky = new Boisson("Whisky", 40f);
+		Boisson bierre = new Boisson("Bierre", 8f);
 		
 		pub.cave.add(coca);
 		pub.cave.add(coca);
@@ -52,8 +52,8 @@ public class Pub {
 		pub.approvisionnerBar("eau");
 		
 		Cocktail maz = new Cocktail("Mazout");
-		maz.add("bierre", new Double(50));
-		maz.add("coca", new Double(50));
+		maz.add("bierre", 50d);
+		maz.add("coca", 50d);
 		pub.bar.add(maz);
 		
 		Boisson cafe = new Boisson("cafe");
