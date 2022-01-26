@@ -1,0 +1,183 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: BarTest</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">src</a> ]
+</div>
+
+<h1>Coverage Summary for Class: BarTest (src)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">BarTest</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (12/ 12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    97.4%
+  </span>
+  <span class="absValue">
+    (37/ 38)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package src;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import static org.junit.jupiter.api.Assertions.*;
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;import org.junit.jupiter.api.BeforeEach;
+<i>6</i>&nbsp;import org.junit.jupiter.api.Test;
+<i>7</i>&nbsp;
+<b class="fc"><i>8</i>&nbsp;class BarTest {</b>
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;  private Bar bar;
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;  @BeforeEach
+<i>13</i>&nbsp;  void setUp() {
+<b class="fc"><i>14</i>&nbsp;    bar = new Bar();</b>
+<b class="fc"><i>15</i>&nbsp;  }</b>
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;  @Test
+<i>18</i>&nbsp;  void testAddBoissonFroide() {
+<b class="fc"><i>19</i>&nbsp;    Boisson boisson = new Boisson(&quot;testBoisson&quot;);</b>
+<b class="fc"><i>20</i>&nbsp;    bar.add(boisson);</b>
+<b class="fc"><i>21</i>&nbsp;    assertEquals(boisson, bar.boissonFroide.lastElement());</b>
+<b class="fc"><i>22</i>&nbsp;  }</b>
+<i>23</i>&nbsp;
+<i>24</i>&nbsp;  @Test
+<i>25</i>&nbsp;  void testAddBoissonAlcoolisee() {
+<b class="fc"><i>26</i>&nbsp;    Boisson boissonAlcoolisee = new Boisson(&quot;testBoissonAlcoolisee&quot;, (float)2.0);</b>
+<b class="fc"><i>27</i>&nbsp;    bar.add(boissonAlcoolisee);</b>
+<b class="fc"><i>28</i>&nbsp;    assertEquals(boissonAlcoolisee, bar.boissonAlcoolisee.lastElement());</b>
+<b class="fc"><i>29</i>&nbsp;  }</b>
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;  @Test
+<i>32</i>&nbsp;  void testAddCocktail() {
+<b class="fc"><i>33</i>&nbsp;    Cocktail cocktail = new Cocktail(&quot;testCocktail&quot;);</b>
+<b class="fc"><i>34</i>&nbsp;    bar.add(cocktail);</b>
+<b class="fc"><i>35</i>&nbsp;    assertEquals(cocktail, bar.cocktailSansAlcoole.lastElement());</b>
+<b class="nc"><i>36</i>&nbsp;  }</b>
+<i>37</i>&nbsp;
+<i>38</i>&nbsp;  @Test
+<i>39</i>&nbsp;  void testAddCocktailAlcoolisee() {
+<i>40</i>&nbsp;    // TODO: implement me!
+<b class="fc"><i>41</i>&nbsp;    throw new UnsupportedOperationException(&quot;Not yet implemented&quot;);</b>
+<i>42</i>&nbsp;  }
+<i>43</i>&nbsp;
+<i>44</i>&nbsp;  @Test
+<i>45</i>&nbsp;  void testServBoissonFroide() {
+<b class="fc"><i>46</i>&nbsp;    Boisson boissonFroide = new Boisson(&quot;testBoissonFroide&quot;);</b>
+<b class="fc"><i>47</i>&nbsp;    bar.add(boissonFroide);</b>
+<b class="fc"><i>48</i>&nbsp;    assertSame(boissonFroide, bar.serv(&quot;testBoissonFroide&quot;));</b>
+<b class="fc"><i>49</i>&nbsp;  }</b>
+<i>50</i>&nbsp;
+<i>51</i>&nbsp;  @Test
+<i>52</i>&nbsp;  void testServBoissonChaude() {
+<i>53</i>&nbsp;    // TODO: implement me!
+<b class="fc"><i>54</i>&nbsp;    throw new UnsupportedOperationException(&quot;Not yet implemented&quot;);</b>
+<i>55</i>&nbsp;  }
+<i>56</i>&nbsp;
+<i>57</i>&nbsp;  @Test
+<i>58</i>&nbsp;  void testServBoissonAlcoolisee() {
+<b class="fc"><i>59</i>&nbsp;    Boisson boissonAlcoolisee = new Boisson(&quot;testBoissonAlcoolisee&quot;);</b>
+<b class="fc"><i>60</i>&nbsp;    bar.add(boissonAlcoolisee);</b>
+<b class="fc"><i>61</i>&nbsp;    assertSame(boissonAlcoolisee, bar.serv(&quot;testBoissonAlcoolisee&quot;));</b>
+<b class="fc"><i>62</i>&nbsp;  }</b>
+<i>63</i>&nbsp;
+<i>64</i>&nbsp;  @Test
+<i>65</i>&nbsp;  void testServCocktail() {
+<b class="fc"><i>66</i>&nbsp;    Boisson cocktail = new Boisson(&quot;testCocktail&quot;);</b>
+<b class="fc"><i>67</i>&nbsp;    bar.add(cocktail);</b>
+<b class="fc"><i>68</i>&nbsp;    assertSame(cocktail, bar.serv(&quot;testCocktail&quot;));</b>
+<b class="fc"><i>69</i>&nbsp;  }</b>
+<i>70</i>&nbsp;
+<i>71</i>&nbsp;  @Test
+<i>72</i>&nbsp;  void testServCocktailAlcoolisee() {
+<i>73</i>&nbsp;    // TODO: implement me!
+<b class="fc"><i>74</i>&nbsp;    throw new UnsupportedOperationException(&quot;Not yet implemented&quot;);</b>
+<i>75</i>&nbsp;  }
+<i>76</i>&nbsp;
+<i>77</i>&nbsp;  @Test
+<i>78</i>&nbsp;  void testToString() {
+<b class="fc"><i>79</i>&nbsp;    bar.add(new Boisson(&quot;testBoisson&quot;));</b>
+<b class="fc"><i>80</i>&nbsp;    bar.add(new Boisson(&quot;testBoissonAlcoolisee&quot;,(float)2.0));</b>
+<b class="fc"><i>81</i>&nbsp;    bar.add(new Boisson(&quot;testBoissonAlcoolisee2&quot;,(float)2.0));</b>
+<b class="fc"><i>82</i>&nbsp;    bar.add(new Boisson(&quot;testCocktail&quot;));</b>
+<i>83</i>&nbsp;
+<b class="fc"><i>84</i>&nbsp;    String resultat = &quot;Bar : \n&quot;</b>
+<i>85</i>&nbsp;        + &quot;\t Sans alcool\n&quot;
+<i>86</i>&nbsp;        + &quot;\t\ttestBoisson\n&quot;
+<i>87</i>&nbsp;        + &quot;\t\ttestCocktail\n&quot;
+<i>88</i>&nbsp;        + &quot;\t Avec alcool\n&quot;
+<i>89</i>&nbsp;        + &quot;\t\ttestBoissonAlcoolisee (l&#39;abus d&#39;alcool est dangereux pour la sante)\n&quot;
+<i>90</i>&nbsp;        + &quot;\t\ttestBoissonAlcoolisee2 (l&#39;abus d&#39;alcool est dangereux pour la sante)\n&quot;
+<i>91</i>&nbsp;        + &quot;\t Cocktail sans alcool\n&quot;
+<i>92</i>&nbsp;        + &quot;\t Cocktail avec alcool\n&quot;
+<i>93</i>&nbsp;        + &quot;\t Boissons chaudes\n&quot;;
+<i>94</i>&nbsp;
+<b class="fc"><i>95</i>&nbsp;    System.out.println(bar);</b>
+<b class="fc"><i>96</i>&nbsp;    assertEquals(bar.toString(), resultat);</b>
+<b class="fc"><i>97</i>&nbsp;  }</b>
+<i>98</i>&nbsp;
+<i>99</i>&nbsp;
+<i>100</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-01-26 17:08</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,152 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Pub</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">src</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Pub (src)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Pub</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    66.7%
+  </span>
+  <span class="absValue">
+    (2/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    16.7%
+  </span>
+  <span class="absValue">
+    (6/ 36)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package src;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;/**
+<i>4</i>&nbsp; * Virtual PUB
+<i>5</i>&nbsp; */
+<i>6</i>&nbsp;public class Pub {
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;	
+<i>9</i>&nbsp;	public Bar bar;
+<i>10</i>&nbsp;	public Cave cave;
+<i>11</i>&nbsp;	
+<i>12</i>&nbsp;	/**
+<i>13</i>&nbsp;	 * 
+<i>14</i>&nbsp;	 */
+<b class="fc"><i>15</i>&nbsp;	public Pub(){</b>
+<b class="fc"><i>16</i>&nbsp;		this.bar = new Bar();</b>
+<b class="fc"><i>17</i>&nbsp;		this.cave = new Cave();</b>
+<b class="fc"><i>18</i>&nbsp;	}</b>
+<i>19</i>&nbsp;	
+<i>20</i>&nbsp;	public void approvisionnerBar(String nom){
+<b class="fc"><i>21</i>&nbsp;		this.bar.add(this.cave.take(nom));</b>
+<b class="fc"><i>22</i>&nbsp;	}</b>
+<i>23</i>&nbsp;	
+<i>24</i>&nbsp;	
+<i>25</i>&nbsp;	/**
+<i>26</i>&nbsp;	 * @param args
+<i>27</i>&nbsp;	 */
+<i>28</i>&nbsp;	public static void main(String[] args) {
+<i>29</i>&nbsp;		/* Creation du pub */
+<b class="nc"><i>30</i>&nbsp;		Pub pub = new Pub();</b>
+<i>31</i>&nbsp;
+<b class="nc"><i>32</i>&nbsp;		Boisson coca = new Boisson(&quot;Coca&quot;);</b>
+<b class="nc"><i>33</i>&nbsp;		Boisson eau = new Boisson(&quot;Eau&quot;);</b>
+<b class="nc"><i>34</i>&nbsp;		Boisson sky = new Boisson(&quot;Whisky&quot;, 40f);</b>
+<b class="nc"><i>35</i>&nbsp;		Boisson bierre = new Boisson(&quot;Bierre&quot;, 8f);</b>
+<i>36</i>&nbsp;		
+<b class="nc"><i>37</i>&nbsp;		pub.cave.add(coca);</b>
+<b class="nc"><i>38</i>&nbsp;		pub.cave.add(coca);</b>
+<b class="nc"><i>39</i>&nbsp;		pub.cave.add(coca);</b>
+<b class="nc"><i>40</i>&nbsp;		pub.cave.add(sky);</b>
+<b class="nc"><i>41</i>&nbsp;		pub.cave.add(sky);</b>
+<b class="nc"><i>42</i>&nbsp;		pub.cave.add(bierre);</b>
+<b class="nc"><i>43</i>&nbsp;		pub.cave.add(bierre);</b>
+<b class="nc"><i>44</i>&nbsp;		pub.cave.add(eau);</b>
+<i>45</i>&nbsp;		
+<b class="nc"><i>46</i>&nbsp;		System.out.println(&quot;Cave initiale :&quot;);</b>
+<b class="nc"><i>47</i>&nbsp;		System.out.println(pub.cave);</b>
+<i>48</i>&nbsp;
+<b class="nc"><i>49</i>&nbsp;		pub.approvisionnerBar(&quot;bierre&quot;);</b>
+<b class="nc"><i>50</i>&nbsp;		pub.approvisionnerBar(&quot;Whisky&quot;);</b>
+<b class="nc"><i>51</i>&nbsp;		pub.approvisionnerBar(&quot;Coca&quot;);</b>
+<b class="nc"><i>52</i>&nbsp;		pub.approvisionnerBar(&quot;eau&quot;);</b>
+<i>53</i>&nbsp;		
+<b class="nc"><i>54</i>&nbsp;		Cocktail maz = new Cocktail(&quot;Mazout&quot;);</b>
+<b class="nc"><i>55</i>&nbsp;		maz.add(&quot;bierre&quot;, 50d);</b>
+<b class="nc"><i>56</i>&nbsp;		maz.add(&quot;coca&quot;, 50d);</b>
+<b class="nc"><i>57</i>&nbsp;		pub.bar.add(maz);</b>
+<i>58</i>&nbsp;		
+<b class="nc"><i>59</i>&nbsp;		Boisson cafe = new Boisson(&quot;cafe&quot;);</b>
+<b class="nc"><i>60</i>&nbsp;		pub.bar.boissonChaude.add(cafe);</b>
+<i>61</i>&nbsp;		
+<b class="nc"><i>62</i>&nbsp;		System.out.println(pub.cave);</b>
+<b class="nc"><i>63</i>&nbsp;		System.out.println(pub.bar);</b>
+<i>64</i>&nbsp;		
+<b class="nc"><i>65</i>&nbsp;		System.out.println(&quot;Boisson servie : &quot; + pub.bar.serv(&quot;cafe&quot;));</b>
+<b class="nc"><i>66</i>&nbsp;		System.out.println(pub.bar);</b>
+<b class="nc"><i>67</i>&nbsp;	}</b>
+<i>68</i>&nbsp;
+<i>69</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-01-26 17:08</div>
+</div>
+</body>
+</html>
